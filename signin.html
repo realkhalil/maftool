@@ -1,0 +1,70 @@
+<!<!-- index.html -->
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <nav>
+      <div class="logo">
+      MAFTOOL
+      </div>
+      <div class="menu">
+          <a href="signin.html">Log in</a>
+          <a href="products.html">Products</a>
+          <a href="landingpage.html">Home</a>
+          <a href="#">Contact</a>
+      
+      </div>
+      <div class="register">
+          <a href="signup.html">Register</a>
+      </div>
+      </nav>
+</head>
+
+<body>
+    <form id="login-form">
+        <div id="logindiv" class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required >
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required >
+            <input type="checkbox" id="show-password-checkbox" onclick="PasswordVisibility()">
+            <label for="show-password-checkbox" class="show-password-label">Show password</label><br>
+
+            <span id="password-error"></span><br>
+
+            <input type="submit" class="submit" value="login">
+
+        </div>
+    </form>
+
+    <script>
+        function handleLogin() {
+            const usernameValue = document.getElementById('uname').value;
+            const passwordValue = document.getElementById('psw').value;
+
+            if (usernameValue === localStorage.getItem("uname") && passwordValue === localStorage.getItem("psw")) {
+                // Login successful
+                window.location.href = "welcome.html";
+            } else {
+                // Login failed
+                alert("Invalid username or password");
+            }
+        }
+
+        function PasswordVisibility() {
+            var x = document.getElementById("psw");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
