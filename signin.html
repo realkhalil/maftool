@@ -1,5 +1,5 @@
-<!<!-- index.html -->
-<!<!DOCTYPE html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,13 +24,13 @@
 </head>
 
 <body>
-    <form id="login-form">
+    <form id="login-form" action="welcome.html">
         <div id="logindiv" class="container">
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required >
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required >
+            <input id="psw" type="password" placeholder="Enter Password" name="psw" required >
             <input type="checkbox" id="show-password-checkbox" onclick="PasswordVisibility()">
             <label for="show-password-checkbox" class="show-password-label">Show password</label><br>
 
